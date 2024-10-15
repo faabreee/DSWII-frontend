@@ -1,0 +1,45 @@
+<app-nav></app-nav>
+<div class="container mt-4">
+    <div class="text-center mb-4">
+      <h2>Detalle Proveedor</h2>
+    </div>
+  
+    <div class="form-wrapper">
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label for="id" class="form-label">ID</label>
+          <input type="number" class="form-control" id="id" name="id" [value]="proveedor.id" readonly>
+        </div>
+  
+        <div class="col-md-6">
+          <label for="ruc" class="form-label">RUC</label>
+          <input type="text" class="form-control" id="ruc" name="ruc" [value]="proveedor.ruc" readonly>
+        </div>
+  
+        <div class="col-md-6">
+          <label for="nomProvee" class="form-label">Nombre del Proveedor</label>
+          <input type="text" class="form-control" id="nomProvee" name="nomProvee" [value]="proveedor.nomProvee" readonly>
+        </div>
+  
+        <div class="col-md-6">
+          <label for="email" class="form-label">Correo</label>
+          <input type="email" class="form-control" id="email" name="email" [value]="proveedor.email" readonly>
+        </div>
+  
+        <div class="col-md-6">
+          <label for="telefono" class="form-label">Teléfono</label>
+          <input type="text" class="form-control" id="telefono" name="telefono" [value]="proveedor.telefono" readonly>
+        </div>
+  
+        <div class="col-md-6">
+          <label for="direccion" class="form-label">Dirección</label>
+          <input type="text" class="form-control" id="direccion" name="direccion" [value]="proveedor.direccion" readonly>
+        </div>
+  
+        <div class="col-12 text-center mt-4">
+          <button href="#" class="btn btn-secondary" (click)="irAlistado()" >Volver</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  

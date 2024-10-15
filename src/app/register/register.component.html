@@ -1,0 +1,47 @@
+<app-nav></app-nav>
+<div class="container">
+<form (ngSubmit)="onSubmit()">
+    <div class="col-md-6">
+      <label for="username" class="form-label">Email</label>
+      <input type="email" class="form-control" id="username" name="username" [(ngModel)]="user.username" placeholder="Email">
+      <!--<div class="text-danger">
+      <div>
+          El user es requerido.
+      </div>
+      <div>
+          El Email debe tener un formato válido.
+      </div>
+  </div>-->
+    </div>
+    <div class="col-md-6">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" placeholder="password">
+    </div>
+    <div class="col-md-6">
+      <label for="firstname" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Nombre" [(ngModel)]="user.firstname">
+    </div>
+    <div class="col-md-6">
+      <label for="lastname" class="form-label">Apellido</label>
+      <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido" [(ngModel)]="user.lastname">
+    </div>
+    <div class="col-md-6">
+      <label for="phone" class="form-label">Celular</label>
+      <input type="phone" class="form-control" id="phone" name="phone" [(ngModel)]="user.phone" placeholder="Numero de contacto">
+    </div>
+    <div class="col-md-4">
+      <label for="role" class="form-label">Rol</label>
+      <select id="role" name="role" class="form-select" [(ngModel)]="user.role">
+        <option value="-1" disabled selected>Seleccione rol</option>
+        <option value="ADMIN">ADMIN</option>
+        <option value="USER">USER</option>
+      </select>
+    </div>
+    <div class="col-12 mt-5">
+      <button type="submit" class="btn btn-primary">REGISTRAR</button>
+    </div>
+  </form>
+  <div class="col-12 text-center mt-4">
+    <button href="#" class="btn btn-secondary" (click)="irAlistado()" >Volver</button>
+  </div>
+</div>

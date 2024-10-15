@@ -1,0 +1,47 @@
+.form-wrapper {
+    max-width: 800px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar horizontalmente */
+    padding: 1.5rem; /* Espaciado interno */
+    border: 1px solid #ced4da; /* Borde del formulario */
+    border-radius: 0.25rem; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra del formulario */
+    background-color: #fff; /* Fondo blanco */
+  }
+  
+  /* Estilos para campos de entrada */
+  .form-control {
+    border-radius: 0.25rem; /* Bordes redondeados en campos de entrada */
+    background-color: #f8f9fa; /* Fondo gris claro para campos readonly */
+    cursor: not-allowed; /* Indicar que el campo es readonly */
+  }
+  
+  /* Estilos para etiquetas */
+  .form-label {
+    font-weight: 600; /* Peso de fuente para etiquetas */
+  }
+  
+  /* Estilo para el botón de volver */
+  .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #5a6268;
+    border-color: #545b62;
+  }
+  
+  /* Estilo para el contenedor del título */
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Espaciado entre los elementos del formulario */
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+  
+  /* Margen inferior para el contenedor */
+  .mb-4 {
+    margin-bottom: 1.5rem;
+  }

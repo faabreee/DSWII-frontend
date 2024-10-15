@@ -1,0 +1,33 @@
+<app-nav></app-nav>
+<div class="container">
+    <h1 class="text-center mb-4">LISTA DE SOLICITUDES</h1>
+    <button type="button" class="btn btn-primary" (click)="irRegistroSolicitud()">Requerimiento</button>
+    <br>
+    <br>
+<table class="table table-striped table-bordered">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Id Producto</th>
+      <th>Id Proveedor</th>
+      <th>Correo</th>
+      <th>Cantidad</th>
+      <th>Fecha</th>
+      <th>Descripcion</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let solicitud of solicitudes">
+      <td>{{solicitud.id}}</td>
+      <td>{{solicitud.objProducto?.nomPro}}</td>
+      <td>{{solicitud.objProducto?.objProveedor?.nomProvee}}</td>
+      <td>{{solicitud.objProducto?.objProveedor?.email}}</td>
+      <td>{{solicitud.cantidad}}</td>
+      <td>{{solicitud.fecha}}</td>
+      <td>{{solicitud.descripcion}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+

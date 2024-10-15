@@ -1,0 +1,39 @@
+.form-wrapper {
+    max-width: 800px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrar horizontalmente */
+    padding: 1.5rem; /* Espaciado interno */
+    border: 1px solid #ced4da; /* Borde del formulario */
+    border-radius: 0.25rem; /* Bordes redondeados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra del formulario */
+    background-color: #fff; /* Fondo blanco */
+  }
+  
+  /* Estilos adicionales para mejorar el diseño */
+  .form-control {
+    border-radius: 0.25rem; /* Bordes redondeados en campos de entrada */
+  }
+  
+  .form-label {
+    font-weight: 600; /* Peso de fuente para etiquetas */
+  }
+  
+  /* Estilo para el botón */
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+  }
+  
+  /* Estilo para el contenedor del título */
+  .text-center {
+    text-align: center;
+  }
+  
+  /* Margen superior para el contenedor */
+  .mt-4 {
+    margin-top: 1.5rem;
+  }

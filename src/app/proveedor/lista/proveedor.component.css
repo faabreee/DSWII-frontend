@@ -1,0 +1,62 @@
+.input-group {
+    display: flex;
+    align-items: center;
+  }
+  
+  .input-group input {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+  }
+  
+  .input-group button {
+    margin-left: 0.5rem;
+  }
+  
+  /* Estilo para el contenedor del botón de búsqueda */
+  .d-flex {
+    display: flex;
+    align-items: center;
+  }
+  
+  .form-control {
+    border-radius: 0.25rem;
+    border: 1px solid #ced4da;
+  }
+  
+  /* Estilo para los botones */
+  .btn-outline-primary {
+    border-color: #007bff;
+    color: #007bff;
+  }
+  
+  .btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+  
+  /* Estilo para el padding y márgenes */
+  .mt-4 {
+    margin-top: 1.5rem;
+  }
+  
+  .mb-3 {
+    margin-bottom: 1rem;
+  }
+  
+  .me-2 {
+    margin-right: 0.5rem;
+  }
+  
+  .btn-sm {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+  .button-container {
+    text-align:end; 
+    margin-top: 20px; 
+}
+
+
+.button-container .btn {
+    margin-top: 10px; 
+}
