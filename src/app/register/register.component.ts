@@ -27,7 +27,7 @@ export class RegisterComponent {
       }
     })
   }
-  irAlistado(){
-    this.enrutador.navigate(['proveedor/lista'])
+  irInicarSesion(){
+    this.enrutador.navigate(['/iniciar-sesion'])
   }
 }

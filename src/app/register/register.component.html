@@ -1,47 +1,79 @@
-<app-nav></app-nav>
-<div class="container">
-<form (ngSubmit)="onSubmit()">
-    <div class="col-md-6">
-      <label for="username" class="form-label">Email</label>
-      <input type="email" class="form-control" id="username" name="username" [(ngModel)]="user.username" placeholder="Email">
-      <!--<div class="text-danger">
-      <div>
-          El user es requerido.
-      </div>
-      <div>
-          El Email debe tener un formato válido.
-      </div>
-  </div>-->
+<div style="display: flex; justify-content: end;">
+  <div class="mitad">
+    <div class="contenido">
+        <div class="logo">
+            <i class="fa-brands fa-slack"></i>
+            <h2>FarmaStock</h2>
+        </div>
+
+        <div style="display: flex; justify-content: center;">
+            <img style="width: 66%;" src="../../../assets/img/svg-register.svg">
+        </div>
+
+        <div class="frase">
+            <em>"La innovación comienza con una gran idea."</em>
+            <p>Autor Desconocido</p>
+        </div>
     </div>
-    <div class="col-md-6">
-      <label for="password" class="form-label">Password</label>
-      <input type="password" class="form-control" id="password" name="password" [(ngModel)]="user.password" placeholder="password">
-    </div>
-    <div class="col-md-6">
-      <label for="firstname" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Nombre" [(ngModel)]="user.firstname">
-    </div>
-    <div class="col-md-6">
-      <label for="lastname" class="form-label">Apellido</label>
-      <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Apellido" [(ngModel)]="user.lastname">
-    </div>
-    <div class="col-md-6">
-      <label for="phone" class="form-label">Celular</label>
-      <input type="phone" class="form-control" id="phone" name="phone" [(ngModel)]="user.phone" placeholder="Numero de contacto">
-    </div>
-    <div class="col-md-4">
-      <label for="role" class="form-label">Rol</label>
-      <select id="role" name="role" class="form-select" [(ngModel)]="user.role">
-        <option value="-1" disabled selected>Seleccione rol</option>
-        <option value="ADMIN">ADMIN</option>
-        <option value="USER">USER</option>
-      </select>
-    </div>
-    <div class="col-12 mt-5">
-      <button type="submit" class="btn btn-primary">REGISTRAR</button>
-    </div>
-  </form>
-  <div class="col-12 text-center mt-4">
-    <button href="#" class="btn btn-secondary" (click)="irAlistado()" >Volver</button>
   </div>
+
+  <div class="register-container">
+    <form (ngSubmit)="onSubmit()" class="formulario">
+        <div>
+          <h4 class="text-center">Registrar Usuario</h4>
+          <p class="text-center">Completa los campos para registrarte</p>
+        </div>
+
+        <!-- Campo de Email -->
+        <div class="acciones">
+            <input type="email" class="input" id="username" name="username" [(ngModel)]="user.username" placeholder="Email">
+        </div>
+
+        <!-- Campo de Password -->
+        <div class="acciones">
+            <input type="password" class="input" id="password" name="password" [(ngModel)]="user.password" placeholder="Contraseña">
+        </div>
+
+        <!-- Campo de Nombre -->
+        <div class="acciones">
+            <input type="text" class="input" id="firstname" name="firstname" placeholder="Nombre" [(ngModel)]="user.firstname">
+        </div>
+
+        <!-- Campo de Apellido -->
+        <div class="acciones">
+            <input type="text" class="input" id="lastname" name="lastname" placeholder="Apellido" [(ngModel)]="user.lastname">
+        </div>
+
+        <!-- Campo de Celular -->
+        <div class="acciones">
+            <input type="number" class="input" id="phone" name="phone" placeholder="Celular" [(ngModel)]="user.phone">
+        </div>
+
+        <!-- Selección de Rol -->
+        <div class="acciones">
+          <select id="role" name="role" class="input" [(ngModel)]="user.role">
+            <option value="1">Seleccione un rol</option>
+            <option value="ADMIN">ADMIN</option>
+            <option value="USER">USER</option>
+          </select>
+        </div>
+
+        <!-- Botón de Registro -->
+        <div class="acciones d-grid">
+            <button type="submit" class="create">Registrarse</button>
+            <div class="info">
+              <div class="linea"></div>
+              <span>O</span>
+              <div class="linea"></div>
+            </div>
+            <div class="info">
+              <a href="#" class="botonvolver" (click)="irInicarSesion()">Iniciar sesion</a>
+          </div>
+        </div>
+    </form>
+
+
+  </div>
+
+
 </div>
