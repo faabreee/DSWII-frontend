@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginService } from 'src/app/services/auth/login.service';
@@ -11,11 +11,12 @@ import { environment } from 'src/environments/environment';
   templateUrl: './personal-details.component.html',
   styleUrls: ['./personal-details.component.css']
 })
-export class PersonalDetailsComponent  {
+export class PersonalDetailsComponent implements OnInit  {
   errorMessage:String="";
   user?:User;
   userLoginOn:boolean=false;
   editMode:boolean=false;
+  showMessage: boolean = true;
 
   registerForm=this.formBuilder.group({
     id:[''],
@@ -23,6 +24,14 @@ export class PersonalDetailsComponent  {
     firstname:['', Validators.required],
     phone:['',Validators.required]
   })
+
+
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.showMessage = false;
+    }, 3000);
+  }
 
   constructor(private userService:UserService, private formBuilder:FormBuilder, private loginService:LoginService, private router: Router){
     this.userService.getUser(environment.userId).subscribe({

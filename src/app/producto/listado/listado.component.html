@@ -1,44 +1,46 @@
-<app-nav></app-nav>
+<div style="display: flex; height: 100vh;">
+    <app-nav></app-nav>
 
-<div class="container mt-4">
-    <h1 class="text-center mb-4"> --> LISTADO PRODUCTOS <-- </h1>
-  
-    <div class="mb-3 d-flex justify-content-between align-items-center">
-      <button type="button" class="btn btn-primary" (click)="registrarProducto()">Nuevo Producto</button>
-      <div class="d-flex align-items-center">
-        <input type="text" class="form-control me-2" [(ngModel)]="nomPro" placeholder="Buscar Producto"/>
-        <button (click)="buscarProducto(nomPro)" class="btn btn-outline-primary">Buscar</button>
-      </div>
-    </div>
-<body>
-    <div class="container">
-        <br>
-        <table class="table table-stripper">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Código</th>
-                    <th>Nombre</th>
-                    <th>Proveedor</th>
-                    <th>Precio</th>
-                    <th>Fecha Compra</th>
-                    <th>Stock</th>
-                    <th>Opciones:</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr *ngFor="let producto of productos">
-                    <th scope="row">{{producto.id}}</th>
-                    <td >{{producto.codPro}}</td>
-                    <td >{{producto.nomPro}}</td>
-                    <td >{{producto?.objProveedor?.nomProvee}}</td>
-                    <td >{{producto.precio}}</td>
-                    <td >{{producto.fechaCompra | date:'dd/MM/yyyy'}}</td>
-                    <td >{{producto.stock}}</td>
-                    <td><button (click)="editarProducto(producto.id)" class="btn btn-info"><i class = "fa fa-pencil" aria-hidden="true"></i></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</body>
+    <div class="container mt-4">
+        <h1 class="text-center mb-4"> --> LISTADO PRODUCTOS <-- </h1>
+    
+        <div class="mb-3 d-flex justify-content-between align-items-center">
+        <button type="button" class="btn btn-primary" (click)="registrarProducto()">Nuevo Producto</button>
+        <div class="d-flex align-items-center">
+            <input type="text" class="form-control me-2" [(ngModel)]="nomPro" placeholder="Buscar Producto"/>
+            <button (click)="buscarProducto(nomPro)" class="btn btn-outline-primary">Buscar</button>
+        </div>
+        </div>
+    <body>
+        <div class="container">
+            <br>
+            <table class="table table-stripper">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Proveedor</th>
+                        <th>Precio</th>
+                        <th>Fecha Compra</th>
+                        <th>Stock</th>
+                        <th>Opciones:</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let producto of productos">
+                        <th scope="row">{{producto.id}}</th>
+                        <td >{{producto.codPro}}</td>
+                        <td >{{producto.nomPro}}</td>
+                        <td >{{producto?.objProveedor?.nomProvee}}</td>
+                        <td >{{producto.precio}}</td>
+                        <td >{{producto.fechaCompra | date:'dd/MM/yyyy'}}</td>
+                        <td >{{producto.stock}}</td>
+                        <td><button (click)="editarProducto(producto.id)" class="btn btn-info"><i class = "fa fa-pencil" aria-hidden="true"></i></button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</div>

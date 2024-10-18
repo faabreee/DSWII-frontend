@@ -1,67 +1,69 @@
-<app-nav></app-nav>
-<div class="container mt-4">
-    <div class="text-center mb-4">
-      <h2>Solicitud de Abastecimiento</h2>
-    </div>
-  
-    <div class="form-wrapper mb-4">
-      <div class="d-flex justify-content-between align-items-center mb-3">
-        <input type="text" class="form-control me-2" [(ngModel)]="name" placeholder="Buscar producto"/>
-        <button class="btn btn-outline-primary" (click)="buscarProducto(name)">Buscar</button>
+<div style="display: flex; height: 100vh;">
+  <app-nav></app-nav>
+  <div class="container mt-4">
+      <div class="text-center mb-4">
+        <h2>Solicitud de Abastecimiento</h2>
       </div>
-  
-      <form class="row g-3" (ngSubmit)="registrarSolicitud()">
-        <!--<div class="col-md-6">
-          <label for="id" class="form-label">ID</label>
-          <input type="number" class="form-control" id="id" name="id" [(ngModel)]="nuevaSolicitud.id" required>
-        </div>-->
-  
-        <div class="col-md-6">
-          <label for="nomPro" class="form-label">Producto</label>
-          <input type="text" class="form-control" id="nomPro" name="nomPro" [(ngModel)]="producto.nomPro" readonly>
+    
+      <div class="form-wrapper mb-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <input type="text" class="form-control me-2" [(ngModel)]="name" placeholder="Buscar producto"/>
+          <button class="btn btn-outline-primary" (click)="buscarProducto(name)">Buscar</button>
         </div>
-  
-        <div class="col-md-6">
-          <label for="cantidad" class="form-label">Cantidad</label>
-          <input type="number" class="form-control" id="cantidad" name="cantidad" [(ngModel)]="nuevaSolicitud.cantidad" required>
-        </div>
-  
-        <div class="col-md-6">
-          <label for="nomProvee" class="form-label">Proveedor</label>
-          <input type="text" class="form-control" id="nomProvee" name="nomProvee" [(ngModel)]="producto.objProveedor.nomProvee" readonly>
-        </div>
-  
-        <div class="col-md-6">
-          <label for="email" class="form-label">Correo</label>
-          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="producto.objProveedor.email" readonly>
-        </div>
-  
-        <div class="col-md-6">
-          <label for="fecha" class="form-label">Fecha</label>
-          <input type="date" class="form-control" id="fecha" name="fecha" [(ngModel)]="nuevaSolicitud.fecha" required>
-        </div>
-  
-        <div class="col-md-6">
-          <label for="descripcion" class="form-label">Descripción</label>
-          <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="nuevaSolicitud.descripcion" required>
-        </div>
-  
-        <div class="col-12 text-center">
-          <button type="submit" class="btn btn-primary">Registrar Solicitud</button>
-        </div>
-      </form>
+    
+        <form class="row g-3" (ngSubmit)="registrarSolicitud()">
+          <!--<div class="col-md-6">
+            <label for="id" class="form-label">ID</label>
+            <input type="number" class="form-control" id="id" name="id" [(ngModel)]="nuevaSolicitud.id" required>
+          </div>-->
+    
+          <div class="col-md-6">
+            <label for="nomPro" class="form-label">Producto</label>
+            <input type="text" class="form-control" id="nomPro" name="nomPro" [(ngModel)]="producto.nomPro" readonly>
+          </div>
+    
+          <div class="col-md-6">
+            <label for="cantidad" class="form-label">Cantidad</label>
+            <input type="number" class="form-control" id="cantidad" name="cantidad" [(ngModel)]="nuevaSolicitud.cantidad" required>
+          </div>
+    
+          <div class="col-md-6">
+            <label for="nomProvee" class="form-label">Proveedor</label>
+            <input type="text" class="form-control" id="nomProvee" name="nomProvee" [(ngModel)]="producto.objProveedor.nomProvee" readonly>
+          </div>
+    
+          <div class="col-md-6">
+            <label for="email" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="email" name="email" [(ngModel)]="producto.objProveedor.email" readonly>
+          </div>
+    
+          <div class="col-md-6">
+            <label for="fecha" class="form-label">Fecha</label>
+            <input type="date" class="form-control" id="fecha" name="fecha" [(ngModel)]="nuevaSolicitud.fecha" required>
+          </div>
+    
+          <div class="col-md-6">
+            <label for="descripcion" class="form-label">Descripción</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion" [(ngModel)]="nuevaSolicitud.descripcion" required>
+          </div>
+    
+          <div class="col-12 text-center">
+            <button type="submit" class="btn btn-primary">Registrar Solicitud</button>
+          </div>
+        </form>
+      </div>
     </div>
-  </div>
 
-  <ng-template #successModal let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title">Éxito</h4>
-      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-    </div>
-    <div class="modal-body">
-      Registro exitoso.
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Close click')">Aceptar</button>
-    </div>
-  </ng-template>
+    <ng-template #successModal let-modal>
+      <div class="modal-header">
+        <h4 class="modal-title">Éxito</h4>
+        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+      </div>
+      <div class="modal-body">
+        Registro exitoso.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Close click')">Aceptar</button>
+      </div>
+    </ng-template>
+</div>

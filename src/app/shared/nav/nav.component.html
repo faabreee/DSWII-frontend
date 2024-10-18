@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <a class="navbar-brand" routerLink="/inicio">Farma Stock</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,4 +21,53 @@
         </ul>
       </div>
     </div>
-  </nav>
+</nav> -->
+
+<div class="sidebar" id="sidebar">
+  <button routerLink="/inicio" onclick="closeSidebar()">
+      <i class="fa-brands fa-slack"></i>
+      <h4>FarmaStock</h4>
+  </button>
+
+  <div>
+      <div class="opcion" routerLink="/proveedor/lista" onclick="toggleSuboptions(this)">
+          <div class="title">
+              <i class="fa-solid fa-truck-moving"></i>
+              <p>Proveedor</p>
+          </div>
+      </div>
+  </div>
+
+
+  <div>
+      <div class="opcion" routerLink="/solicitud/lista" onclick="toggleSuboptions(this)">
+          <div class="title">
+              <i class="fa-solid fa-paper-plane"></i>
+              <p>Solicitud</p>
+          </div>
+      </div>
+  </div>
+
+  <div>
+      <div class="opcion" routerLink="/producto/listar" onclick="toggleSuboptions(this)">
+          <div class="title">
+              <i class="fa-solid fa-list-check"></i>
+              <p>Productos</p>
+          </div>
+      </div>
+  </div>
+
+  <br>
+  <div class="line"></div>
+  <br>
+
+  <div>
+      <div class="opcion" (click)="logout()"  routerLink="" onclick="toggleSuboptions(this)">
+          <div class="title">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <p>Cerrar sesión</p>
+          </div>
+      </div>
+  </div>
+  
+</div>

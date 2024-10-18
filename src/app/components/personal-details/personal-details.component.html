@@ -1,8 +1,8 @@
-<li class="nav-item dropdown pe-3">
+<!-- <li class="nav-item dropdown pe-3">
   <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
       <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
       <span class="d-none d-md-block dropdown-toggle ps-2">{{ user?.firstname }} {{ user?.lastname }}</span>
-    </a><!-- End Profile Image Icon -->
+    </a>
     
     <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
       <li class="dropdown-header text-center">
@@ -19,7 +19,7 @@
         </a>
       </li>
       
-      <!--<li>
+      <li>
         <hr class="dropdown-divider">
       </li>
       <li>
@@ -27,14 +27,14 @@
       </li>      
       <li>
         <hr class="dropdown-divider">
-      </li>-->
+      </li>
       <li>
         <a class="dropdown-item d-flex align-items-center" routerLink="/">
           <i class="bi bi-box-arrow-right"></i>
           <span>Salir</span>
         </a>
       </li>
-    </ul><!-- End Profile Dropdown Items -->
+    </ul>
   </li>
 
 <form *ngIf="userLoginOn && editMode" [formGroup]="registerForm" >
@@ -75,4 +75,26 @@
     </div>
     <button type="submit" (click)="savePersonalDetailsData()"  class="btn btn-dark mt-3 ml-3">Guardar</button>
     <a class="btn btn-danger mt-3" (click)="editMode=false">Cancelar</a>
-</form>
+</form> -->
+
+<div class="contenedor">
+  <h3>Bienvenido,{{ user?.firstname }}</h3>
+  <p>Aqui podras gestionar tu farmacia !!</p>
+
+  <div id="mensajebad"
+    *ngIf="!userLoginOn" 
+    [ngClass]="{ 'fade-in': showMessage, 'fade-out': !showMessage }"
+  >
+    <i class="fa-solid fa-xmark"></i>
+    Usuario no autenticado
+  </div>
+  
+  <div id="mensajeok"
+  *ngIf="userLoginOn" 
+  [ngClass]="{ 'fade-in': showMessage, 'fade-out': !showMessage }"
+  >
+    <i class="fa-solid fa-check"></i>
+    Usuario autenticado
+  </div>
+</div>
+

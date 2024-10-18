@@ -1,6 +1,6 @@
-<div class="container">
-<app-personal-details></app-personal-details>
+<div style="display: flex; height: 100vh;">
+    <app-nav></app-nav> 
+    <div class="container">
+    <app-personal-details></app-personal-details>
+    </div>
 </div>
-<app-nav></app-nav> 
-<p *ngIf="!userLoginOn" class="alert alert-danger">Usuario NO autenticado</p>
-<p *ngIf="userLoginOn" class="alert alert-success">Usuario Autenticado</p>

@@ -78,26 +78,28 @@
     align-items: center;
     justify-content: space-evenly;
     gap: 10px;
+    color: #007bb2;
   }
 
   .linea{
     flex-grow: 1;
     height: 0.1px;
-    background-color: black;
+    background-color: #007bb2;
   }
   
   .info .botonvolver {
     width: 356px;
-    background-color: #007bb2;
+    background-color: transparent;
     outline: none;
     border: 1px solid #007bb2;
     border-radius: 6px;
-    color: white;
+    color: 007bb2;
     padding: 5px 12px;
     font-size: 13px;
     text-decoration: none;
     text-align: center;
     font-weight: bold;
+    color: #007bb2;
   }
   
   .mitad {
