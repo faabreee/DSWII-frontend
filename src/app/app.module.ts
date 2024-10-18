@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MatDialogModule } from '@angular/material/dialog';  // Importar módulo de diálogos
+import { MatButtonModule } from '@angular/material/button';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -25,6 +27,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ListadoComponent } from './producto/listado/listado.component';
 import { RegistrarComponent } from './producto/registrar/registrar.component';
 import { EditarComponent } from './producto/editar/editar.component';
+import { DialogoConfirmacionLogoutComponent } from 'src/app/components/dialogo-confirmacion-logout/dialogo-confirmacion-logout.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,7 @@ import { EditarComponent } from './producto/editar/editar.component';
     ListadoComponent,
     RegistrarComponent,
     EditarComponent,
+    DialogoConfirmacionLogoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +56,9 @@ import { EditarComponent } from './producto/editar/editar.component';
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
+    MatDialogModule,  
+    MatButtonModule,
+    BrowserAnimationsModule, 
   ],
   providers: [
     {provide:HTTP_INTERCEPTORS,useClass:JwtInterceptorService,multi:true},

@@ -12,6 +12,7 @@ import { environment } from 'src/environments/environment';
   styleUrls: ['./personal-details.component.css']
 })
 export class PersonalDetailsComponent  {
+  
   errorMessage:String="";
   user?:User;
   userLoginOn:boolean=false;

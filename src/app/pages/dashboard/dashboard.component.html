@@ -1,6 +1,5 @@
-<div class="container">
-<app-personal-details></app-personal-details>
-</div>
 <app-nav></app-nav> 
-<p *ngIf="!userLoginOn" class="alert alert-danger">Usuario NO autenticado</p>
+<div class="container">
+    <app-personal-details></app-personal-details>
+    </div>
 <p *ngIf="userLoginOn" class="alert alert-success">Usuario Autenticado</p>

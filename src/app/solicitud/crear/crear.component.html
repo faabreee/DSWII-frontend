@@ -48,20 +48,25 @@
   
         <div class="col-12 text-center">
           <button type="submit" class="btn btn-primary">Registrar Solicitud</button>
+
         </div>
       </form>
     </div>
   </div>
 
-  <ng-template #successModal let-modal>
-    <div class="modal-header">
-      <h4 class="modal-title">Éxito</h4>
-      <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-    </div>
-    <div class="modal-body">
-      Registro exitoso.
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-secondary" (click)="modal.dismiss('Close click')">Aceptar</button>
-    </div>
-  </ng-template>
+ <!-- Modal de Confirmación -->
+<ng-template #confirmModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title">Confirmación</h4>
+    <button type="button" class="close" (click)="modal.dismiss()">&times;</button>
+  </div>
+  <div class="modal-body">
+    <p>¿Estás seguro de que deseas registrar esta solicitud?</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="modal.dismiss()">Cancelar</button>
+    <button type="button" class="btn btn-primary" (click)="confirmarRegistro(modal)">Aceptar</button>
+  </div>
+</ng-template>
+
+  

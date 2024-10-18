@@ -1,0 +1,27 @@
+/* Estilos para evitar el scroll */
+.botones {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    height: 60px;
+    margin-top: 15px;
+    overflow: hidden;  
+  }
+  
+  mat-dialog-content {
+    overflow: hidden;  
+    max-height: 100%;  
+    padding-bottom: 10px;
+  }
+  
+  mat-dialog-container {
+    max-height: 90vh;   
+    overflow-y: auto;  
+  }
+  
+  .titulo {
+    text-align: center; 
+    margin: 0;           
+  }
+  
