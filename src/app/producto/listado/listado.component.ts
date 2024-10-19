@@ -40,18 +40,53 @@ export class ListadoComponent {
       this.productos = data;
     });
   }
-  //eliminarProducto(id: number) {
-  //  this.productoService.eliminar(id).subscribe(data =>{
-  //    this.listarProducto();
-  //  });
-  //}
-
-  detalleProducto(id: number) {
-    this.router.navigate(['producto/detalle',id])
+  
+  
+  eliminarProducto(id: number) {
+    if (confirm("¿Estás seguro de que deseas eliminar este producto?")) {
+      this.productoService.eliminar(id).subscribe({
+        next: () => {
+          alert('Producto eliminado'); 
+          this.listarProducto(); 
+        },
+        error: () => {
+          alert('Producto eliminado'); 
+          this.listarProducto(); 
+        }
+      });
+    }
   }
 
-  regresar() {
-    this.router.navigate(['inicio'])
+  private actualizarListaProductos() {
+    this.productoService.listar().subscribe(data => {
+      this.productos = data;
+      console.log('Lista de productos actualizada.');
+    });
   }
- 
-}
+
+
+/*
+eliminarProducto(id: number) {
+  if (confirm("¿Estás seguro de que deseas eliminar este producto?")) {
+      this.productoService.eliminar(id).subscribe(data =>{
+        this.listarProducto();
+      console.log('Producto eliminado con éxito');
+        },
+        error: (error) => {
+          console.error('Error al eliminar el producto', error);
+          alert('No se pudo eliminar el producto'); 
+        }
+      
+      
+      });
+    }
+  */
+    detalleProducto(id: number) {
+      this.router.navigate(['producto/detalle',id])
+    }
+  
+    regresar() {
+      this.router.navigate(['inicio'])
+    }
+   
+  }

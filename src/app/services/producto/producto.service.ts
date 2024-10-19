@@ -18,9 +18,9 @@ export class ProductoService {
   public listar(): Observable<Producto[]>{
     return this.http.get<Producto[]>(environment.urlHost+"auth/producto/listado");
   }
-  //public eliminar(id: number):Observable<any>{
-  //return this.http.delete(this.baseUrl + `/${id}`);
-  //}
+  public eliminar(id: number):Observable<any>{
+  return this.http.delete(this.baseUrl + `/${id}`);
+  }
   public obtenerProducto(id: number): Observable<Producto>{
     return  this.http.get<Producto>(environment.urlHost+"auth/producto"+ `/${id}`);
   }
