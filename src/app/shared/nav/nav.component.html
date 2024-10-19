@@ -1,27 +1,91 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    
-    
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <a class="navbar-brand" routerLink="/producto/listar">Farma Stock</a>
-      <ul class="navbar-nav" *ngIf="userLoginOn">
-        <li class="nav-item" *ngIf="userLoginOn">
-          <a class="nav-link active" routerLink="/producto/listar">Producto</a>
-        </li>
-        <li class="nav-item" >
-          <a class="nav-link active" routerLink="/proveedor/lista">Proveedor</a>
-        </li>
-        <li class="nav-item" *ngIf="userLoginOn" >
-          <a class="nav-link active" routerLink="/solicitud/lista">Solicitud</a>
-        </li>
-        <li class="nav-item" *ngIf="userLoginOn" >
-          <a class="nav-link active" routerLink="/inicio">Perfil</a>
-        </li>
-       
-        <li *ngIf="userLoginOn" class="nav-item">
-          <button mat-button (click)="logout()">Cerrar Sesión</button>
-        </li>
-      </ul>
+<!-- <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" routerLink="/inicio">Farma Stock</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav" *ngIf="userLoginOn">
+          <li class="nav-item" >
+            <a class="nav-link active" routerLink="/proveedor/lista">Proveedor</a>
+          </li>
+          <li class="nav-item" *ngIf="userLoginOn" >
+            <a class="nav-link active" routerLink="/solicitud/lista">Solicitud</a>
+          </li>
+          <li class="nav-item" *ngIf="userLoginOn">
+            <a class="nav-link active" routerLink="/producto/listar">Producto</a>
+          </li>
+          <li *ngIf="userLoginOn" class="nav-item">
+            <a class="nav-link" (click)="logout()"  routerLink="/inicio">Cerrar Sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+</nav> -->
+
+<div class="sidebar" id="sidebar">
+  <button routerLink="/inicio" onclick="closeSidebar()">
+      <i class="fa-brands fa-slack"></i>
+      <h4>FarmaStock</h4>
+  </button>
+
+  <div>
+      <div class="opcion" routerLink="/proveedor/lista" onclick="toggleSuboptions(this)">
+          <div class="title">
+              <i class="fa-solid fa-truck-moving"></i>
+              <p>Proveedor</p>
+          </div>
+      </div>
+  </div>
+
+
+  <div>
+      <div class="opcion" routerLink="/solicitud/lista" onclick="toggleSuboptions(this)">
+          <div class="title">
+              <i class="fa-solid fa-paper-plane"></i>
+              <p>Solicitud</p>
+          </div>
+      </div>
+  </div>
+
+  <div>
+      <div class="opcion" routerLink="/producto/listar" onclick="toggleSuboptions(this)">
+          <div class="title">
+              <i class="fa-solid fa-list-check"></i>
+              <p>Productos</p>
+          </div>
+      </div>
+  </div>
+
+  <br>
+  <div class="line"></div>
+  <br>
+
+  <div >
+      <div class="opcion" mat-button (click)="logout()">
+          <div class="title">
+              <i class="fa-solid fa-right-from-bracket"></i>
+              <p>Cerrar sesión</p>
+          </div>
+      </div>
+  </div>
+
+  <!-- <button class="boton-secondary" id="abrirDialogo">Show Dialog</button> -->
+
+  
+</div>
+<!-- 
+<div class="divisiones">
+
+  <div id="fondo-dialogo" class="fondo-dialogo" style="display:none;">
+    <div class="dialogo">
+      <h3>Are you absolutely sure?</h3>
+      <p>This action cannot be undone. This will permanently delete your account and remove your data from our servers.</p>
+      <div class="btn-dialogo">
+        <button id="close" class="boton-secondary">Cancel</button>
+        <button class="boton">Continue</button>
+      </div>
     </div>
   </div>
-</nav>
+</div> -->
+

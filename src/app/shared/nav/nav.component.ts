@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { MatDialog } from '@angular/material/dialog'; // Importa MatDialog
-import { LoginService } from 'src/app/services/auth/login.service';
 import { DialogoConfirmacionLogoutComponent } from 'src/app/components/dialogo-confirmacion-logout/dialogo-confirmacion-logout.component';
+import { LoginService } from 'src/app/services/auth/login.service';
 import { User } from 'src/app/services/auth/user';
 
 @Component({
@@ -11,9 +11,8 @@ import { User } from 'src/app/services/auth/user';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  userLoginOn: boolean = false;
-  user?: User;
-
+  userLoginOn:boolean=false;
+  user?:User;
   constructor(
     private loginService: LoginService,
     private router: Router,
@@ -21,11 +20,13 @@ export class NavComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.loginService.currentUserLoginOn.subscribe({
-      next: (userLoginOn) => {
-        this.userLoginOn = userLoginOn;
+    this.loginService.currentUserLoginOn.subscribe(
+      {
+        next:(userLoginOn) => {
+          this.userLoginOn=userLoginOn;
+        }
       }
-    });
+    )
   }
 
   logout(): void {
@@ -37,5 +38,46 @@ export class NavComponent implements OnInit {
         this.router.navigate(['iniciar-sesion']);
       }
     });
+    
   }
+
+
+  ngAfterViewInit(): void {
+    // Este código se ejecutará después de que la vista esté completamente cargada
+    const modal = document.getElementById('fondo-dialogo');
+    const dialogo = document.querySelector('.dialogo') as HTMLElement;
+    const btn = document.getElementById('abrirDialogo');
+    const span = document.getElementById('close');
+
+    if (btn) {
+      btn.onclick = function() {
+        if (modal) modal.style.display = 'flex';
+      }
+    }
+
+    if (span) {
+      span.onclick = function() {
+        if (dialogo) {
+          dialogo.style.animation = 'scale-out 0.2s forwards';
+          setTimeout(function() {
+            if (modal) modal.style.display = 'none';
+            dialogo.style.animation = '';
+          }, 100);
+        }
+      }
+    }
+
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        if (dialogo) {
+          dialogo.style.animation = 'scale-out 0.2s forwards';
+          setTimeout(function() {
+            if (modal) modal.style.display = 'none';
+            dialogo.style.animation = '';
+          }, 100);
+        }
+      }
+    }
+  }
+
 }

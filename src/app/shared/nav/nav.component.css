@@ -202,3 +202,81 @@ button:hover {
     transform: rotateZ(-45deg) translate(-5px, 5px);
   }
   
+
+
+
+
+ /*--Dialogo Alerta--*/
+.fondo-dialogo {
+    display: none;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #000c;
+    animation: scale-in 0.01s;
+}
+.dialogo {
+    width: 30%;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    background-color: var(--background);
+    border-radius: 8px;
+    border: 0.1px solid var(--border);
+    gap: 10px;
+    transform: scale(0.9);
+    animation: scale-in 0.2s forwards;
+}
+
+
+@keyframes scale-in {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes scale-out {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+
+.dialogo p{
+    font-size: 15px;
+    text-align: start;
+    color: #aaa;
+}
+.btn-dialogo{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
