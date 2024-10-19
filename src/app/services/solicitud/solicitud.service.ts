@@ -13,7 +13,7 @@ export class SolicitudService {
   constructor(private http: HttpClient) { }
 
   public registrar(solicitud: Solicitud): Observable<any>{
-    return this.http.post<any>(environment.urlHost+"auth/solicitud", solicitud);
+    return this.http.post<any>(environment.urlHost+"auth/solicitud/guardar", solicitud);
  
   }
 

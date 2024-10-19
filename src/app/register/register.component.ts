@@ -20,14 +20,14 @@ export class RegisterComponent {
   registrar(){
     this.userService.registerUser(this.user).subscribe({
       next: (data) => {
-        this.enrutador.navigate(['/inicio']);
+        this.enrutador.navigate(['/iniciar-sesion']);
       },
       error: (error) => {
         console.error(error);
       }
     })
   }
-  irInicarSesion(){
-    this.enrutador.navigate(['/iniciar-sesion'])
+  iraLogin(){
+    this.enrutador.navigate(['iniciar-sesion'])
   }
 }
