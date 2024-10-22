@@ -5,20 +5,10 @@ html, body {
   background-color: #e3f2fd; 
 }
 
-.wa {
-  min-height: 100vh; /* Ocupa al menos el 100% de la altura de la ventana */
-  display: flex;
-  flex-direction: column;
-  background-color: #e3f2fd; /* Fondo celeste suave */
-  margin: 0;
-  padding: 100px 0; /* Ajusta el padding superior e inferior */
-}
-
 .container {
-  flex: 1; /* Hace que el contenedor ocupe el espacio disponible dentro de .wa */
+  flex: 1; 
 }
 
-/* Mantén los demás estilos tal cual */
 .input-group {
   display: flex;
   align-items: center;
@@ -45,7 +35,6 @@ html, body {
   padding: 0.375rem 0.75rem;
 }
 
-/* Estilos para los botones */
 .btn-outline-primary {
   border-color: #007bff;
   color: #007bff;
@@ -56,15 +45,14 @@ html, body {
   color: #fff;
 }
 
-/* Botones pequeños */
 .btn-sm {
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
 }
 
-/* Márgenes superiores y laterales */
 .mt-4 {
   margin-top: 1.5rem;
+  
 }
 
 .mb-3 {
@@ -75,7 +63,6 @@ html, body {
   margin-right: 0.5rem;
 }
 
-/* Contenedor para los botones */
 .button-container {
   text-align: end;
   margin-top: 20px;
@@ -85,7 +72,6 @@ html, body {
   margin-top: 10px;
 }
 
-/* Tabla estilizada */
 .table {
   width: 100%;
   margin-bottom: 1rem;
@@ -110,12 +96,10 @@ html, body {
   background-color: #f8f9fa;
 }
 
-/* Efecto hover sobre las filas */
 .table tbody tr:hover {
   background-color: #e9ecef;
 }
 
-/* Estilo para los botones de la tabla */
 .table .btn {
   margin-right: 5px;
 }
@@ -134,7 +118,6 @@ html, body {
   opacity: 0.9;
 }
 
-/* Ajustes de responsive */
 @media (max-width: 768px) {
   .d-flex {
       flex-direction: column;
@@ -153,3 +136,4 @@ html, body {
       font-size: 0.9rem;
   }
 }
+
