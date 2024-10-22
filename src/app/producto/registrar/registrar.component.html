@@ -1,14 +1,20 @@
 <div style="display: flex; height: 100vh;">
     <app-nav></app-nav>
-    <div class="container">
-        <h4 class="text-center">AGREGAR PRODUCTOS</h4>
-        <br>
+    <div class="container mt-4">
+        <div class="text-center mb-4">
+        </div>
+    
+        <div class="card mb-3" style="max-width: 700px; margin: auto; margin-top: 90px;">
+          <div class="card-header bg-dark text-white text-center">
+            <h3 class="mb-0">Registrar</h3>
+          </div>
+          <div class="card-body">
         <form class="row g-3" (ngSubmit)="registrarProducto()">
-            <div class="col-md-6">
+            <div class="col-md-3">
                 <label for="codPro" class="form-label">Codigo</label>
-                <input type="double" class="form-control" id="codPro" [(ngModel)]="newProducto.codPro" required placeholder="Ingresa el codigo del producto.." [ngModelOptions]="{standalone: true}">
+                <input type="double" class="form-control" id="codPro" [(ngModel)]="newProducto.codPro" required placeholder="Código" [ngModelOptions]="{standalone: true}">
             </div>
-            <div class="col-12">
+            <div class="col-9">
                 <label for="nomPro" class="form-label">Nombre</label>
                 <input type="text" class="form-control" id="nomPro" [(ngModel)]="newProducto.nomPro" requiredplaceholder="Ingresa el nombre del producto.." [ngModelOptions]="{standalone: true}">
             </div>
@@ -34,9 +40,11 @@
                 <label for="stock" class="form-label">stock</label>
                 <input type="number" class="form-control" id="stock" [(ngModel)]="newProducto.stock" placeholder="Ingrese el stock.." [ngModelOptions]="{standalone: true}">
             </div>
-            <div class="col-12">
-                <button type="submit" class="btn btn-primary">Guardar</button> | <button type="button" class="btn btn-danger" (click)="regresar()">Regresar</button>
+            <div class="col-12 text-center">
+                <button type="submit" class="btn btn-primary  btn-sm me-2">Guardar</button> | <button type="button" class="btn btn-danger btn-sm me-2" (click)="regresar()">Regresar</button>
             </div>
         </form>
     </div>
+</div>
+</div>
 </div>

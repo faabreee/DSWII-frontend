@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Producto } from 'src/app/services/producto/producto';
 import { ProductoService } from 'src/app/services/producto/producto.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { EliminarProductoModalComponent } from 'src/app/eliminar-producto-modal/eliminar-producto-modal.component'; // Asegúrate de importar el componente modal
+
 
 @Component({
   selector: 'app-listado',
@@ -11,8 +14,9 @@ import { ProductoService } from 'src/app/services/producto/producto.service';
 export class ListadoComponent {
   productos: Producto[] = [];
   nomPro: String = "";
+  productoIdToDelete: number | null = null;
 
-  constructor(private productoService: ProductoService,private router: Router, private route: ActivatedRoute) {
+  constructor(private productoService: ProductoService,private router: Router, private route: ActivatedRoute, private modalService: NgbModal) {
   }
 
   ngOnInit(){
@@ -43,27 +47,27 @@ export class ListadoComponent {
   
   
   eliminarProducto(id: number) {
-    if (confirm("¿Estás seguro de que deseas eliminar este producto?")) {
-      this.productoService.eliminar(id).subscribe({
-        next: () => {
-          alert('Producto eliminado'); 
-          this.listarProducto(); 
-        },
-        error: () => {
-          alert('Producto eliminado'); 
-          this.listarProducto(); 
-        }
-      });
-    }
-  }
-
-  private actualizarListaProductos() {
-    this.productoService.listar().subscribe(data => {
-      this.productos = data;
-      console.log('Lista de productos actualizada.');
+    // Abre el modal y pasa el ID del producto a eliminar
+    const modalRef = this.modalService.open(EliminarProductoModalComponent);
+    modalRef.componentInstance.productoId = id; // Pasa el ID al modal
+  
+    modalRef.result.then((result) => {
+      if (result === 'confirm') {
+        // Llama al servicio para eliminar el producto solo si el usuario confirma
+        this.productoService.eliminar(id).subscribe({
+          next: () => {
+            this.listarProducto(); // Refresca la lista después de eliminar
+          },
+          error: (error) => {
+            console.error('Error al eliminar el producto', error);
+            alert('Error al eliminar el producto');
+          }
+        });
+      }
+    }, (reason) => {
+      console.log('Modal dismissed');
     });
   }
-
 
 /*
 eliminarProducto(id: number) {

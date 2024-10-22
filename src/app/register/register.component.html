@@ -61,17 +61,6 @@
             </div>
         </div>
 
-        <!-- Selección de Rol -->
-        <div class="acciones">
-          <select id="role" name="role" class="input" [(ngModel)]="user.role" required #rol="ngModel">
-            <option selected disabled value="">Seleccione un rol</option>
-            <option value="ADMIN">ADMIN</option>
-            <option value="USER">USER</option>
-          </select>
-          <div style="font-size: 13px;" *ngIf="rol.invalid && rol.touched" class="text-danger">
-            Seleccione un rol
-          </div>
-        </div>
 
         <!-- Botón de Registro -->
         <div class="acciones d-grid">

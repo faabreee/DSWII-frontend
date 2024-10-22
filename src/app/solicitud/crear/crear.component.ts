@@ -106,4 +106,7 @@ export class SolicitudCrearComponent {
       }
     };
   }
+  regresar() {
+    this.router.navigate(['solicitud/lista'])
+  }
 }

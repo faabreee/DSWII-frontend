@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Proveedor } from 'src/app/services/proveedor/proveedor';
 import { ProveedorService } from 'src/app/services/proveedor/proveedor.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { EliminarProductoModalComponent } from 'src/app/eliminar-producto-modal/eliminar-producto-modal.component'; // Asegúrate de importar el componente modal
+
 
 @Component({
   selector: 'app-proveedor',
@@ -13,7 +16,7 @@ export class ProveedorComponent {
   name: String = "";
   proveedores: Proveedor[] = [];
 
-  constructor(private proveedorService: ProveedorService,private router: Router){}
+  constructor(private proveedorService: ProveedorService,private router: Router, private modalService: NgbModal){}
 
   ngOnInit(){
     this.listar();
@@ -37,11 +40,27 @@ listar(){
     });
   }
   
-  eliminar(id: number){
-    this.proveedorService.eliminar(id).subscribe(data =>{
-      this.listar();
-  });
-}
+  eliminar(id: number) {
+    const modalRef = this.modalService.open(EliminarProductoModalComponent);
+    modalRef.componentInstance.productoId = id;
+
+    modalRef.result.then((result) => {
+      if (result === 'confirm') {
+        this.proveedorService.eliminar(id).subscribe({
+          next: () => {
+            this.listar(); 
+          },
+          error: (error) => {
+            console.error('Error al eliminar el proveedor', error);
+            alert('Error al eliminar el proveedor');
+          }
+        });
+      }
+    }, (reason) => {
+      console.log('Modal dismissed');
+    });
+  }
+
   irDetalle(id: number){
     this.router.navigate(['proveedor/detalle',id])
   }

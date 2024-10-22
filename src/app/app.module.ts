@@ -28,6 +28,7 @@ import { ListadoComponent } from './producto/listado/listado.component';
 import { RegistrarComponent } from './producto/registrar/registrar.component';
 import { EditarComponent } from './producto/editar/editar.component';
 import { DialogoConfirmacionLogoutComponent } from 'src/app/components/dialogo-confirmacion-logout/dialogo-confirmacion-logout.component';
+import { EliminarProductoModalComponent } from './eliminar-producto-modal/eliminar-producto-modal.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { DialogoConfirmacionLogoutComponent } from 'src/app/components/dialogo-c
     RegistrarComponent,
     EditarComponent,
     DialogoConfirmacionLogoutComponent,
+    EliminarProductoModalComponent,
   ],
   imports: [
     BrowserModule,
