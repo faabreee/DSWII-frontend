@@ -28,7 +28,7 @@ export class ProveedorService {
     return  this.http.get<Proveedor[]>(environment.urlHost+"auth/proveedor/buscar"+ `?name=${name}`);
   }
   public eliminar(id: number):Observable<any>{
-    return this.http.delete(this.baseUrl + `/${id}`);
+    return this.http.delete(this.baseUrl + `/proveedor/${id}`);
   }
   //llamar proveedor a productos
   getProveedores(): Observable<Proveedor[]> {
