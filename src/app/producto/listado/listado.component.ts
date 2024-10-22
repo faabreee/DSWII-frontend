@@ -47,16 +47,15 @@ export class ListadoComponent {
   
   
   eliminarProducto(id: number) {
-    // Abre el modal y pasa el ID del producto a eliminar
     const modalRef = this.modalService.open(EliminarProductoModalComponent);
-    modalRef.componentInstance.productoId = id; // Pasa el ID al modal
+    modalRef.componentInstance.productoId = id; 
   
     modalRef.result.then((result) => {
       if (result === 'confirm') {
-        // Llama al servicio para eliminar el producto solo si el usuario confirma
+
         this.productoService.eliminar(id).subscribe({
           next: () => {
-            this.listarProducto(); // Refresca la lista después de eliminar
+            this.listarProducto(); 
           },
           error: (error) => {
             console.error('Error al eliminar el producto', error);

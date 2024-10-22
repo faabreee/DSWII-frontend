@@ -24,7 +24,6 @@
           <p class="text-center">Completa los campos para registrarte</p>
         </div>
 
-        <!-- Campo de Email -->
         <div class="acciones">
             <input type="email" class="input" id="username" name="username" [(ngModel)]="user.username" placeholder="Email" pattern="^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"  required #correo="ngModel">
             <div style="font-size: 13px;" *ngIf="correo.invalid && correo.touched" class="text-danger">
@@ -32,12 +31,11 @@
             </div>
          </div>
 
-        <!-- Campo de Password -->
         <div class="acciones">
             <input type="password" class="input" id="password" name="password" [(ngModel)]="user.password" placeholder="Contraseña">
         </div>
 
-        <!-- Campo de Nombre -->
+
         <div class="acciones">
             <input type="text" class="input" id="firstname" name="firstname" placeholder="Nombre" [(ngModel)]="user.firstname" pattern="^[a-zA-Z']{3,15}" #nombre="ngModel">
             <div style="font-size: 13px;" *ngIf="nombre.invalid && nombre.touched" class="text-danger">
@@ -45,7 +43,6 @@
             </div>
         </div>
 
-        <!-- Campo de Apellido -->
         <div class="acciones">
             <input type="text" class="input" id="lastname" name="lastname" placeholder="Apellido" [(ngModel)]="user.lastname" pattern="^[a-zA-Z]{3,15}" #apellido="ngModel">
             <div style="font-size: 13px;" *ngIf="apellido.invalid && apellido.touched" class="text-danger">
@@ -53,7 +50,7 @@
             </div>
         </div>
 
-        <!-- Campo de Celular -->
+
         <div class="acciones">
             <input type="number" class="input" id="phone" name="phone" placeholder="Celular" [(ngModel)]="user.phone" pattern="^[0-9]{9}" #telefono="ngModel">
             <div style="font-size: 13px;" *ngIf="telefono.invalid && telefono.touched" class="text-danger">
@@ -62,7 +59,6 @@
         </div>
 
 
-        <!-- Botón de Registro -->
         <div class="acciones d-grid">
             <button type="submit" class="create">Registrarse</button>
             <div class="info">

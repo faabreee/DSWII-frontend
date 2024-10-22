@@ -1,236 +1,139 @@
 html, body {
-<<<<<<< HEAD
-    height: 100%; 
-    margin: 0; 
-    padding: 0; 
-    background-color: #e3f2fd; 
-  }
-  
-  .wa {
-    min-height: 100vh; /* Ocupa al menos el 100% de la altura de la ventana */
-    display: flex;
-    flex-direction: column;
-    background-color: #e3f2fd; /* Fondo celeste suave */
-    margin: 0;
-    padding: 100px 0; /* Ajusta el padding superior e inferior */
-  }
-  
-  .container {
-    flex: 1; /* Hace que el contenedor ocupe el espacio disponible dentro de .wa */
-  }
-  
-  /* Mantén los demás estilos tal cual */
-  .input-group {
-    display: flex;
-    align-items: center;
-  }
-  
-  .input-group input {
-    border-radius: 0.25rem;
-    border: 1px solid #ced4da;
-    padding: 0.375rem 0.75rem;
-  }
-  
-  .input-group button {
-    margin-left: 0.5rem;
-  }
-  
-  .d-flex {
-    display: flex;
-    align-items: center;
-  }
-  
-  .form-control {
-    border-radius: 0.25rem;
-    border: 1px solid #ced4da;
-    padding: 0.375rem 0.75rem;
-  }
-  
-  /* Estilos para los botones */
-  .btn-outline-primary {
-=======
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f4f7;
-  }
-  
+  height: 100%; 
+  margin: 0; 
+  padding: 0; 
+  background-color: #e3f2fd; 
+}
 
+.container {
+  flex: 1; 
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+}
+
+.input-group input {
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+  padding: 0.375rem 0.75rem;
+}
+
+.input-group button {
+  margin-left: 0.5rem;
+}
+
+.d-flex {
+  display: flex;
+  align-items: center;
+}
+
+.form-control {
+  border-radius: 0.25rem;
+  border: 1px solid #ced4da;
+  padding: 0.375rem 0.75rem;
+}
+
+.btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.btn-outline-primary:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.mt-4 {
+  margin-top: 1.5rem;
   
+}
+
+.mb-3 {
+  margin-bottom: 1rem;
+}
+
+.me-2 {
+  margin-right: 0.5rem;
+}
+
+.button-container {
+  text-align: end;
+  margin-top: 20px;
+}
+
+.button-container .btn {
+  margin-top: 10px;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border-collapse: collapse;
+}
+
+.table th, .table td {
+  padding: 12px;
+  border: 1px solid #dee2e6;
+  text-align: left;
+}
+
+.table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.table td {
+  background-color: #f8f9fa;
+}
+
+.table tbody tr:hover {
+  background-color: #e9ecef;
+}
+
+.table .btn {
+  margin-right: 5px;
+}
+
+.table .btn-success {
+  background-color: #28a745;
+  border: none;
+}
+
+.table .btn-warning {
+  background-color: #ffc107;
+  border: none;
+}
+
+.table .btn:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .d-flex {
+      flex-direction: column;
+  }
+
+  .form-control {
+      margin-bottom: 10px;
+  }
+
   .mb-3 {
-    margin-bottom: 16px;
+      flex-direction: column;
+      align-items: flex-start;
   }
-  
-  input.form-control {
-    border-radius: 5px;
-    padding: 10px;
-    font-size: 16px;
-  }
-  
-  button.btn-outline-primary {
->>>>>>> a443c89e0104c40f01490e11e8eb84c43572c957
-    border-color: #007bff;
-    color: #007bff;
-  }
-  
-<<<<<<< HEAD
-  .btn-outline-primary:hover {
-    background-color: #007bff;
-    color: #fff;
-  }
-  
-  /* Botones pequeños */
-  .btn-sm {
-    padding: 0.25rem 0.5rem;
-    font-size: 0.875rem;
-  }
-  
-  /* Márgenes superiores y laterales */
-  .mt-4 {
-    margin-top: 1.5rem;
-  }
-  
-  .mb-3 {
-    margin-bottom: 1rem;
-  }
-  
-  .me-2 {
-    margin-right: 0.5rem;
-  }
-  
-  /* Contenedor para los botones */
-  .button-container {
-    text-align: end;
-    margin-top: 20px;
-  }
-  
-  .button-container .btn {
-    margin-top: 10px;
-  }
-  
-  /* Tabla estilizada */
+
   .table {
-    width: 100%;
-    margin-bottom: 1rem;
-    background-color: #fff;
-    border-collapse: collapse;
+      font-size: 0.9rem;
   }
-  
-  .table th, .table td {
-    padding: 12px;
-    border: 1px solid #dee2e6;
-    text-align: left;
-  }
-  
-  .table th {
-    background-color: #007bff;
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  
-  .table td {
-    background-color: #f8f9fa;
-  }
-  
-  /* Efecto hover sobre las filas */
-  .table tbody tr:hover {
-    background-color: #e9ecef;
-  }
-  
-  /* Estilo para los botones de la tabla */
-  .table .btn {
-    margin-right: 5px;
-  }
-  
-  .table .btn-success {
-    background-color: #28a745;
-    border: none;
-  }
-  
-  .table .btn-warning {
-    background-color: #ffc107;
-    border: none;
-  }
-  
-  .table .btn:hover {
-    opacity: 0.9;
-  }
-  
-  /* Ajustes de responsive */
-  @media (max-width: 768px) {
-    .d-flex {
-        flex-direction: column;
-    }
-  
-    .form-control {
-        margin-bottom: 10px;
-    }
-  
-    .mb-3 {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-  
-    .table {
-        font-size: 0.9rem;
-    }
-  }
-=======
-  button.btn-outline-primary:hover {
-    background-color: #007bff;
-    color: white;
-  }
-  
-  button.btn-primary {
-    background-color: #007bff;
-    border-color: #007bff;
-    color: white;
-    padding: 10px 20px;
-  }
-  
-  button.btn-primary:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-  }
-  
-  table {
-    width: 100%;
-    margin-top: 20px;
-  }
-  
-  thead th {
-    background-color: #007bff;
-    color: white;
-    text-align: center;
-  }
-  
-  tbody td {
-    text-align: center;
-  }
-  
-  button.btn-info {
-    background-color: #17a2b8;
-    color: white;
-    border: none;
-  }
-  
-  button.btn-info:hover {
-    background-color: #138496;
-  }
-  
-  button.btn-danger {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-  }
-  
-  button.btn-danger:hover {
-    background-color: #c82333;
-  }
-  
-  .fa-pencil, .fa-trash {
-    margin-right: 5px;
-  }
-  
->>>>>>> a443c89e0104c40f01490e11e8eb84c43572c957
+}
+
