@@ -26,8 +26,11 @@
 
         <!-- Campo de Email -->
         <div class="acciones">
-            <input type="email" class="input" id="username" name="username" [(ngModel)]="user.username" placeholder="Email">
-        </div>
+            <input type="email" class="input" id="username" name="username" [(ngModel)]="user.username" placeholder="Email" pattern="^[a-zA-Z0-9._]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"  required #correo="ngModel">
+            <div style="font-size: 13px;" *ngIf="correo.invalid && correo.touched" class="text-danger">
+              El correo es obligatorio y debe tener el formato adecuado.
+            </div>
+         </div>
 
         <!-- Campo de Password -->
         <div class="acciones">
@@ -36,26 +39,38 @@
 
         <!-- Campo de Nombre -->
         <div class="acciones">
-            <input type="text" class="input" id="firstname" name="firstname" placeholder="Nombre" [(ngModel)]="user.firstname">
+            <input type="text" class="input" id="firstname" name="firstname" placeholder="Nombre" [(ngModel)]="user.firstname" pattern="^[a-zA-Z']{3,15}" #nombre="ngModel">
+            <div style="font-size: 13px;" *ngIf="nombre.invalid && nombre.touched" class="text-danger">
+              Escribe un nombre valido.
+            </div>
         </div>
 
         <!-- Campo de Apellido -->
         <div class="acciones">
-            <input type="text" class="input" id="lastname" name="lastname" placeholder="Apellido" [(ngModel)]="user.lastname">
+            <input type="text" class="input" id="lastname" name="lastname" placeholder="Apellido" [(ngModel)]="user.lastname" pattern="^[a-zA-Z]{3,15}" #apellido="ngModel">
+            <div style="font-size: 13px;" *ngIf="apellido.invalid && apellido.touched" class="text-danger">
+              Escribe un apellido valido.
+            </div>
         </div>
 
         <!-- Campo de Celular -->
         <div class="acciones">
-            <input type="number" class="input" id="phone" name="phone" placeholder="Celular" [(ngModel)]="user.phone">
+            <input type="number" class="input" id="phone" name="phone" placeholder="Celular" [(ngModel)]="user.phone" pattern="^[0-9]{9}" #telefono="ngModel">
+            <div style="font-size: 13px;" *ngIf="telefono.invalid && telefono.touched" class="text-danger">
+              El número de celular debe tener 9 dígitos.
+            </div>
         </div>
 
         <!-- Selección de Rol -->
         <div class="acciones">
-          <select id="role" name="role" class="input" [(ngModel)]="user.role">
-            <option value="1">Seleccione un rol</option>
+          <select id="role" name="role" class="input" [(ngModel)]="user.role" required #rol="ngModel">
+            <option selected disabled value="">Seleccione un rol</option>
             <option value="ADMIN">ADMIN</option>
             <option value="USER">USER</option>
           </select>
+          <div style="font-size: 13px;" *ngIf="rol.invalid && rol.touched" class="text-danger">
+            Seleccione un rol
+          </div>
         </div>
 
         <!-- Botón de Registro -->
