@@ -1,34 +1,41 @@
 <div style="display: flex; height: 100vh;">
   <app-nav></app-nav>
-  <div class="container">
-      <h1 class="text-center mb-4" style="margin-top: 23px;">Lista de Solicitudes</h1>
-      <button type="button" class="btn btn-dark" (click)="irRegistroSolicitud()">Requerimiento</button>
-      <br>
-      <br>
-  <table class="table table-striped table-bordered">
-    <thead>
-      <tr>
-        <th class="text-center">ID</th>
-        <th class="text-center">Id Producto</th>
-        <th class="text-center">Id Proveedor</th>
-        <th class="text-center">Correo</th>
-        <th class="text-center">Cantidad</th>
-        <th class="text-center">Fecha</th>
-        <th class="text-center">Descripcion</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let solicitud of solicitudes">
-        <td class="text-center">{{solicitud.id}}</td>
-        <td class="text-center">{{solicitud.objProducto?.nomPro}}</td>
-        <td class="text-center">{{solicitud.objProducto?.objProveedor?.nomProvee}}</td>
-        <td class="text-center">{{solicitud.objProducto?.objProveedor?.email}}</td>
-        <td class="text-center">{{solicitud.cantidad}}</td>
-        <td class="text-center">{{solicitud.fecha}}</td>
-        <td class="text-center">{{solicitud.descripcion}}</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="" style="padding: 30px 50px; width: 100%;">
+    <h2>Lista de Solicitudes</h2>
+    <br>
+    <div class="bar">
+      <button class="btnAgregar" (click)="irRegistroSolicitud()">Nueva solicitud</button>
+      <div class="navbuscar">
+        <!-- <input class="inputBuscar" type="text" [(ngModel)]="name" placeholder="Buscar proveedor"/>
+        <button class="btnBuscar" (click)="buscarProveedor(name)"><i class="fa-solid fa-magnifying-glass"></i></button> -->
+      </div>
+    </div>
+    <br>
+    <div class="tabla">
+      <table>
+          <thead>
+              <tr>
+                <th>ID</th>
+                <th>ID Producto</th>
+                <th>ID Proveedor</th>
+                <th>Correo</th>
+                <th>Cantidad</th>
+                <th>Fecha</th>
+                <th>Descripcion</th>
+              </tr>
+          </thead>
+          <tbody id="taskTableBody">
+              <tr *ngFor="let solicitud of solicitudes">
+                  <td><p>{{solicitud.id}}</p></td>
+                  <td><p>{{solicitud.objProducto?.nomPro}}</p></td>
+                  <td><p>{{solicitud.objProducto?.objProveedor?.nomProvee}}</p></td>
+                  <td><p>{{solicitud.objProducto?.objProveedor?.email}}</p></td>
+                  <td><p>{{solicitud.cantidad}}</p></td>
+                  <td><p>{{solicitud.fecha}}</p></td>
+                  <td><p>{{solicitud.descripcion}}</p></td>
+              </tr>
+          </tbody>
+      </table>
   </div>
 <div>
 

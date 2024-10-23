@@ -1,7 +1,50 @@
 <div style="display: flex; height: 100vh;">
   <app-nav></app-nav>
-  <div class="container mt-4">
-      <h1 class="text-center mb-4">PROVEEDORES</h1>
+  <div class="" style="padding: 30px 50px; width: 100%;">
+    <h2>Proveedores</h2>
+    <br>
+    <div class="bar">
+      <button class="btnAgregar" (click)="irRegistrarProveedor()">Agregar</button>
+      <div class="navbuscar">
+        <input class="inputBuscar" type="text" [(ngModel)]="name" placeholder="Buscar proveedor"/>
+        <button class="btnBuscar" (click)="buscarProveedor(name)"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </div>
+    <br>
+    <div class="tabla">
+      <table>
+          <thead>
+              <tr>
+                <th>ID</th>
+                <th>RUC</th>
+                <th>PROVEEDOR</th>
+                <th>CORREO</th>
+                <th>TELEFONO</th>
+                <th>DIRECCION</th>
+                <th>ACCIONES</th>
+              </tr>
+          </thead>
+          <tbody id="taskTableBody">
+              <tr *ngFor="let proveedor of proveedores">
+                  <td><p>{{proveedor.id}}</p></td>
+                  <td><p>{{proveedor.ruc}}</p></td>
+                  <td><p>{{proveedor.nomProvee}}</p></td>
+                  <td><p>{{proveedor.email}}</p></td>
+                  <td><p>{{proveedor.telefono}}</p></td>
+                  <td><p>{{proveedor.direccion}}</p></td>
+                  <td style="display: flex; gap: 5px;">
+                    <button class="btnTable" (click)="irEditarProveedor(proveedor.id)"><i class="fa-solid fa-pen-to-square"></i></button>
+                    <button class="btnTable" (click)="irDetalle(proveedor.id)"><i class="fa-solid fa-circle-info"></i></button>
+                    <button class="btnTabDel" (click)="eliminar(proveedor.id)"><i class="fa-solid fa-trash-can"></i></button>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+  </div>
+
+
+
+      <!-- <h1 class="text-center mb-4">PROVEEDORES</h1>
     
       <div class="mb-3 d-flex justify-content-between align-items-center">
         <button type="button" class="btn btn-dark"(click)="irRegistrarProveedor()"> + Agregar</button>
@@ -38,7 +81,7 @@
             </td>
           </tr>
         </tbody>
-      </table>
+      </table> -->
   </div>
 </div>
 
