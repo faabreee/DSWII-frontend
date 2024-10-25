@@ -12,11 +12,17 @@
         <form class="row g-3" (ngSubmit)="registrarProducto()">
             <div class="col-md-3">
                 <label for="codPro" class="form-label">Codigo</label>
-                <input type="double" class="form-control" id="codPro" [(ngModel)]="newProducto.codPro" required placeholder="Código" [ngModelOptions]="{standalone: true}">
+                <input type="double" class="form-control" id="codPro" [(ngModel)]="newProducto.codPro" required placeholder="Código" [ngModelOptions]="{standalone: true}" pattern="^P\d+$" #codPro="ngModel">
+                <div style="font-size: 11px;" *ngIf="codPro.invalid && codPro.touched" class="text-danger">
+                    Debe seguir el formato correcto. (Ejm. P04).
+                </div>
             </div>
             <div class="col-9">
                 <label for="nomPro" class="form-label">Nombre</label>
-                <input type="text" class="form-control" id="nomPro" [(ngModel)]="newProducto.nomPro" requiredplaceholder="Ingresa el nombre del producto.." [ngModelOptions]="{standalone: true}">
+                <input type="text" class="form-control" id="nomPro" [(ngModel)]="newProducto.nomPro" requiredplaceholder="Ingresa el nombre del producto.." [ngModelOptions]="{standalone: true}" required  #nomPro="ngModel">
+                <div style="font-size: 11px;" *ngIf="nomPro.invalid && nomPro.touched" class="text-danger">
+                    El nombre es obligatorio.
+                </div>
             </div>
 
             <div class="col-md-6">
@@ -29,16 +35,22 @@
             </div>
             <div class="col-md-6">
                 <label for="precio" class="form-label">Precio</label>
-                <input type="number" class="form-control" id="precio" [(ngModel)]="newProducto.precio" placeholder="Ingrese el precio.." [ngModelOptions]="{standalone: true}">
+                <input type="number" class="form-control" id="precio" [(ngModel)]="newProducto.precio" placeholder="Ingrese el precio.." [ngModelOptions]="{standalone: true}"  min=1 #precio = "ngModel" required>
+                <div style="font-size: 11px;" *ngIf="precio.invalid && precio.touched" class="text-danger">
+                    El precio debe ser mayor a 0;
+                </div>
             </div>
             <div class="col-md-6">
                 <label for="fechaCompra" class="form-label">Fecha Compra</label>
-                <input type="date" forma class="form-control" id="fechaCompra" [(ngModel)]="newProducto.fechaCompra" [ngModelOptions]="{standalone: true}">
+                <input type="date" forma class="form-control" id="fechaCompra" [(ngModel)]="newProducto.fechaCompra" [ngModelOptions]="{standalone: true}" required>
             </div>
 
             <div class="col-md-6">
                 <label for="stock" class="form-label">stock</label>
-                <input type="number" class="form-control" id="stock" [(ngModel)]="newProducto.stock" placeholder="Ingrese el stock.." [ngModelOptions]="{standalone: true}">
+                <input type="number" class="form-control" id="stock" [(ngModel)]="newProducto.stock" placeholder="Ingrese el stock.." [ngModelOptions]="{standalone: true}" min=1 #stock = "ngModel" required>
+                <div style="font-size: 11px;" *ngIf="stock.invalid && stock.touched" class="text-danger">
+                    El stock debe ser mayor a 0;
+                </div>
             </div>
             <div class="col-12 text-center">
                 <button type="submit" class="btn btn-primary  btn-sm me-2">Guardar</button> <button type="button" class="btn btn-danger btn-sm me-2" (click)="regresar()">Regresar</button>
